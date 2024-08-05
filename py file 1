@@ -1,0 +1,32 @@
+import requests
+
+def get_chuck_norris_joke():
+    """
+    Fetches a random Chuck Norris joke from the API and returns the joke text.
+    """
+    url = "https://api.chucknorris.io/jokes/random"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Check for HTTP errors
+        joke_data = response.json()
+        return joke_data.get("value", "No joke found.")
+    except requests.exceptions.RequestException as e:
+        return f"Error fetching joke: {e}"
+
+def main():
+    """
+    Main function to run the Chuck Norris joke program.
+    """
+    print("Welcome to the Chuck Norris Joke Generator!")
+    while True:
+        joke = get_chuck_norris_joke()
+        print("\nHere's a joke for you:\n")
+        print(joke)
+        print("\nWould you like another joke? (Y/N): ", end="")
+        user_input = input().strip().lower()
+        if user_input != 'y':
+            break
+    print("\nThank you for using the Chuck Norris Joke Generator! Goodbye!")
+
+if __name__ == "__main__":
+    main()
