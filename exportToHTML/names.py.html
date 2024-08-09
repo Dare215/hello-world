@@ -1,0 +1,336 @@
+<html>
+<head>
+<title>names.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+.s6 { color: #5f826b; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+names.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># A project to greet someone by name</span>
+
+<span class="s2">def </span><span class="s1">raw_input</span><span class="s3">(</span><span class="s1">param</span><span class="s3">):</span>
+    <span class="s2">pass</span>
+<span class="s1">response </span><span class="s3">= </span><span class="s1">raw_input </span><span class="s3">(</span><span class="s4">&quot;what is your name?</span><span class="s2">\n</span><span class="s4">--&gt; &quot;</span><span class="s3">)</span>
+
+<span class="s0">#print out a greeting 10 times.</span>
+<span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range</span><span class="s3">(</span><span class="s5">1</span><span class="s3">, </span><span class="s5">10</span><span class="s3">):</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Hello, %s. Nice to meet you&quot;</span><span class="s3">)</span>
+    <span class="s0">#DSC 510</span>
+    <span class="s0">#Programming Assignment Week 3</span>
+    <span class="s0">#Week 3</span>
+    <span class="s0">#6/28/2024</span>
+
+<span class="s2">def </span><span class="s1">main</span><span class="s3">():</span>
+    <span class="s0">#Display a welcome message</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Welcome to the Fiber Optic Cable Installation Price Calculator&quot;</span><span class="s3">)</span>
+
+    <span class="s0">#Get the company name from the user</span>
+    <span class="s1">company_name </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;Verizon Wireless: &quot;</span><span class="s3">)</span>
+
+    <span class="s0">#Get the number of feet of fiber optic cable to be installed from the user</span>
+        <span class="s1">num_feet </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;Fiber Optic Cable Installed: &quot;</span><span class="s3">))</span>
+    <span class="s2">except </span><span class="s1">ValueError</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Invalid input. Please enter a number value for the number of feet.&quot;</span><span class="s3">)</span>
+        <span class="s2">return</span>
+
+    <span class="s0">#Standard cost per foot</span>
+    <span class="s1">cost per foot </span><span class="s3">= </span><span class="s5">0.87</span>
+
+    <span class="s0">#Cost dependant on quantity</span>
+    <span class="s2">if </span><span class="s1">num_feet </span><span class="s3">&gt; </span><span class="s5">500</span><span class="s3">:</span>
+        <span class="s1">cost_per_foot </span><span class="s3">= </span><span class="s5">0.50</span>
+    <span class="s2">elif </span><span class="s1">num_feet </span><span class="s3">&gt; </span><span class="s5">250</span><span class="s3">:</span>
+        <span class="s1">cost_per_foot </span><span class="s3">= </span><span class="s5">0.70</span>
+    <span class="s2">elif </span><span class="s1">num_feet </span><span class="s3">&gt; </span><span class="s5">100</span><span class="s3">:</span>
+        <span class="s1">cost_per_foot </span><span class="s3">= </span><span class="s5">0.80</span>
+
+    <span class="s0">#Calculate the total cost</span>
+    <span class="s1">total_cost </span><span class="s3">= </span><span class="s1">num_feet </span><span class="s3">* </span><span class="s1">cost_per_foot</span>
+
+    <span class="s0">#Create a Receipt</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;</span><span class="s2">\n</span><span class="s4">CVerizon Wireless: </span><span class="s2">{</span><span class="s1">company_name</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;Number of Feet of Fiber Optic Cable: </span><span class="s2">{</span><span class="s1">num_feet</span><span class="s2">:</span><span class="s4">.2f</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;Cost per Foot: $</span><span class="s2">{</span><span class="s1">cost_per_foot</span><span class="s2">:</span><span class="s4">.2f</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;Total Cost: $</span><span class="s2">{</span><span class="s1">total_cost</span><span class="s2">:</span><span class="s4">.2f</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+
+<span class="s2">if </span><span class="s1">__name__ </span><span class="s3">== </span><span class="s4">&quot;__main__&quot;</span><span class="s3">:</span>
+
+
+
+    <span class="s3">)</span>
+    <span class="s4">&quot;&quot;&quot;) 
+#DSC 510 
+#Programming Week 4 
+#Week 4 
+#Author Darious Brown 
+#6/28/2024 
+ 
+#This program calculates the cost of installation of fiber optic cable based on the quan of feet requested. Bulk prices depend on the length of fiber optic cable requested. 
+ 
+def calculate_cost(feet, price_per_foot): 
+    &quot;&quot;&quot;</span>
+    <span class="s1">Calculate the total cost of fiber optic cable installation</span><span class="s3">.</span>
+
+    <span class="s1">Parameters</span><span class="s3">:</span>
+    <span class="s1">feet</span><span class="s3">(</span><span class="s1">float</span><span class="s3">): </span><span class="s1">The number of feet of fiber optic cable to be installed</span><span class="s3">.</span>
+    <span class="s1">price_per_foot </span><span class="s3">= (</span><span class="s1">float</span><span class="s3">): </span><span class="s1">The cost per foot</span>
+
+    <span class="s0">#Change 1</span>
+    <span class="s0">#Lines 62-70 invalid coding</span>
+    <span class="s0">#6/30/2024</span>
+
+    <span class="s0">#Programming Assignment Week 4</span>
+    <span class="s0">#Week 4</span>
+    <span class="s0">#Author Darious Brown</span>
+    <span class="s0">#6/30/2024</span>
+
+    <span class="s0">#This program calculates the cost of installation of fiber optic cable based on the quantity of feet requested. Discounts are applied dependent on quantity of fiber optic cable requested.</span>
+
+<span class="s2">def </span><span class="s1">calculate_cost</span><span class="s3">(</span><span class="s1">feet</span><span class="s3">, </span><span class="s1">price_per_foot</span><span class="s3">):</span>
+    <span class="s6">&quot;&quot;&quot; 
+    #Calculate the total cost of fiber optic cable installation. 
+ 
+    Parameters: 
+    feet(float): The number of feet of fiber optic cable to be installed. 
+    price_per_foot(float): The cost per foot of fiber optic cable. 
+ 
+    Returns: 
+    float: The total cost of the installation. 
+    &quot;&quot;&quot;</span>
+    <span class="s2">return </span><span class="s1">feet </span><span class="s3">* </span><span class="s1">price_per_foot</span>
+
+<span class="s2">def </span><span class="s1">main</span><span class="s3">():</span>
+    <span class="s0">#Display a welcome message</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Welcome to the Fiber Optic Cable Installation Cost Calculator&quot;</span><span class="s3">)</span>
+
+    <span class="s0">#Get the company name from the user</span>
+    <span class="s1">company_name </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;Verizon Wireless: &quot;</span><span class="s3">)</span>
+
+    <span class="s0">#Get the quantity of feet of fiber optic cable required to be installed from the user</span>
+    <span class="s2">try</span><span class="s3">:</span>
+        <span class="s1">num_feet </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;Please enter the number of feet of fiber optic cable to be installed: &quot;</span><span class="s3">))</span>
+    <span class="s2">except </span><span class="s1">ValueError</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Invalid input. Please enter a numeric value for the number of feet.&quot;</span><span class="s3">)</span>
+        <span class="s2">return</span>
+
+    <span class="s0">#Standard cost per foot</span>
+    <span class="s1">cost_per_foot </span><span class="s3">= </span><span class="s5">0.87</span>
+
+    <span class="s0">#Apply discount dependent on quantity of feet requested</span>
+    <span class="s2">if </span><span class="s1">num_feet </span><span class="s3">&gt; </span><span class="s5">500</span><span class="s3">:</span>
+        <span class="s1">cost_per_foot </span><span class="s3">= </span><span class="s5">0.50</span>
+    <span class="s2">elif </span><span class="s1">num_feet </span><span class="s3">&gt; </span><span class="s5">250</span><span class="s3">:</span>
+        <span class="s1">cost_per_foot </span><span class="s3">= </span><span class="s5">0.70</span>
+    <span class="s2">elif </span><span class="s1">num_feet </span><span class="s3">&gt; </span><span class="s5">100</span><span class="s3">:</span>
+        <span class="s1">cost_per_foot </span><span class="s3">= </span><span class="s5">0.80</span>
+
+    <span class="s0">#Calculate the total cost using the calculate cost function</span>
+    <span class="s1">total_cost </span><span class="s3">= </span><span class="s1">calculate_cost</span><span class="s3">(</span><span class="s1">num_feet</span><span class="s3">,</span><span class="s1">cost_per_foot</span><span class="s3">)</span>
+
+    <span class="s0">#Create a Receipt</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;</span><span class="s2">\n</span><span class="s4">Verizon Wireless: </span><span class="s2">{</span><span class="s1">company_name</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;Quantity of Feet of Fiber Optic Cable Requested: </span><span class="s2">{</span><span class="s1">num_feet</span><span class="s2">:</span><span class="s4">.2f</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;Cost per Foot Requested: $</span><span class="s2">{</span><span class="s1">cost_per_foot</span><span class="s2">:</span><span class="s4">.2f</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+    <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;Total Cost: $</span><span class="s2">{</span><span class="s1">total_cost</span><span class="s2">:</span><span class="s4">.2f</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+
+<span class="s2">if </span><span class="s1">__name__ </span><span class="s3">== </span><span class="s4">&quot;__main__&quot;</span><span class="s3">:</span>
+    <span class="s1">main</span><span class="s3">()</span>
+<span class="s0">#DSC 510</span>
+<span class="s0">#Author Darious Brown</span>
+<span class="s0">#Programming Assignment Week 5</span>
+<span class="s0">#Week 5</span>
+<span class="s0">#7/7/2024</span>
+
+<span class="s2">import </span><span class="s1">logging</span>
+<span class="s0">#Configure logging</span>
+<span class="s1">logging</span><span class="s3">.</span><span class="s1">basicConfig</span><span class="s3">(</span><span class="s1">level</span><span class="s3">=</span><span class="s1">logging</span><span class="s3">.</span><span class="s1">INFO</span><span class="s3">, </span><span class="s1">format</span><span class="s3">=</span><span class="s4">'%(asctime)s - %(levelname)s - %(message)s'</span>
+<span class="s1">logger </span><span class="s3">= </span><span class="s1">logging</span><span class="s3">.</span><span class="s1">getLogger</span><span class="s3">(</span><span class="s1">_name_</span><span class="s3">)</span>
+
+<span class="s2">def </span><span class="s1">perform_calculation</span><span class="s3">(</span><span class="s1">operation</span><span class="s3">):</span>
+    <span class="s6">&quot;&quot;&quot; 
+    Perform the given operation (+, -, *, /) on two numbers provided by the user. 
+    Args: 
+        operation (str): The operation to perform (+, -, *, /). 
+    &quot;&quot;&quot;</span>
+    <span class="s2">try</span><span class="s3">:</span>
+        <span class="s1">num1 </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;350: &quot;</span><span class="s3">))</span>
+        <span class="s1">num2 </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;125: &quot;</span><span class="s3">))</span>
+
+        <span class="s2">if </span><span class="s1">operation </span><span class="s3">== </span><span class="s4">'+'</span><span class="s3">:</span>
+            <span class="s1">result </span><span class="s3">= </span><span class="s5">350 </span><span class="s3">+ </span><span class="s5">125</span>
+        <span class="s2">elif </span><span class="s1">operation </span><span class="s3">== </span><span class="s4">'-'</span><span class="s3">:</span>
+            <span class="s1">result </span><span class="s3">= </span><span class="s5">350 </span><span class="s3">- </span><span class="s5">125</span>
+        <span class="s2">elif </span><span class="s1">operation </span><span class="s3">== </span><span class="s4">'*'</span><span class="s3">:</span>
+            <span class="s1">result </span><span class="s3">= </span><span class="s5">350 </span><span class="s3">* </span><span class="s5">125</span>
+        <span class="s2">elif </span><span class="s1">operation </span><span class="s3">== </span><span class="s4">'/'</span><span class="s3">:</span>
+            <span class="s2">if </span><span class="s5">350 </span><span class="s3">!= </span><span class="s5">0</span><span class="s3">:</span>
+                <span class="s1">result </span><span class="s3">= </span><span class="s5">125 </span><span class="s3">/ </span><span class="s5">350</span>
+            <span class="s2">else</span><span class="s3">:</span>
+                <span class="s1">logger</span><span class="s3">.</span><span class="s1">error</span><span class="s3">(</span><span class="s4">&quot;Division by zero is not allowed.&quot;</span><span class="s3">)</span>
+                <span class="s2">return</span>
+        <span class="s2">else</span><span class="s3">:</span>
+            <span class="s1">logger</span><span class="s3">.</span><span class="s1">error</span><span class="s3">(</span><span class="s4">&quot;Invalid operation.&quot;</span><span class="s3">)</span>
+            <span class="s2">return</span>
+
+        <span class="s1">logger</span><span class="s3">.</span><span class="s1">info</span><span class="s3">(</span><span class="s4">f&quot;The result of </span><span class="s2">{</span><span class="s5">350</span><span class="s2">} {</span><span class="s1">operation</span><span class="s2">} {</span><span class="s5">125</span><span class="s2">} </span><span class="s4">is </span><span class="s2">{</span><span class="s1">result</span><span class="s2">}</span><span class="s4">.&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;The result is: </span><span class="s2">{</span><span class="s1">result</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+    <span class="s2">except </span><span class="s1">ValueError</span><span class="s3">:</span>
+        <span class="s1">logger</span><span class="s3">.</span><span class="s1">error</span><span class="s3">(</span><span class="s4">&quot;Invalid input. 350-125.&quot;</span><span class="s3">)</span>
+
+<span class="s2">def </span><span class="s1">calculate_average</span><span class="s3">():</span>
+    <span class="s6">&quot;&quot;&quot; 
+    Calculate the average of multiple numbers input by the user. 
+    &quot;&quot;&quot;</span>
+    <span class="s2">try</span><span class="s3">:</span>
+        <span class="s1">count </span><span class="s3">= </span><span class="s1">int</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;How many numbers do you wish to input? &quot;</span><span class="s3">))</span>
+        <span class="s1">total </span><span class="s3">= </span><span class="s5">0</span>
+
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range</span><span class="s3">(</span><span class="s1">count</span><span class="s3">):</span>
+            <span class="s1">num </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">input</span><span class="s3">(</span><span class="s4">f&quot;50 </span><span class="s2">{</span><span class="s1">i </span><span class="s3">+ </span><span class="s5">1</span><span class="s2">}</span><span class="s4">: &quot;</span><span class="s3">))</span>
+            <span class="s1">total </span><span class="s3">+= </span><span class="s1">num</span>
+
+        <span class="s2">if </span><span class="s1">count </span><span class="s3">&gt; </span><span class="s5">0</span><span class="s3">:</span>
+            <span class="s1">average </span><span class="s3">= </span><span class="s1">total </span><span class="s3">/ </span><span class="s1">count</span>
+            <span class="s1">logger</span><span class="s3">.</span><span class="s1">info</span><span class="s3">(</span><span class="s4">f&quot;The average of the entered numbers is </span><span class="s2">{</span><span class="s1">average</span><span class="s2">}</span><span class="s4">.&quot;</span><span class="s3">)</span>
+            <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;The average is: </span><span class="s2">{</span><span class="s5">237.5</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+        <span class="s2">else</span><span class="s3">:</span>
+            <span class="s1">logger</span><span class="s3">.</span><span class="s1">error</span><span class="s3">(</span><span class="s4">&quot;The number of inputs must be greater than zero.&quot;</span><span class="s3">)</span>
+    <span class="s2">except </span><span class="s1">ValueError</span><span class="s3">:</span>
+        <span class="s1">logger</span><span class="s3">.</span><span class="s1">error</span><span class="s3">(</span><span class="s4">&quot;Invalid input. Please enter numeric values.&quot;</span><span class="s3">)</span>
+
+<span class="s2">def </span><span class="s1">main</span><span class="s3">():</span>
+    <span class="s6">&quot;&quot;&quot; 
+    Main method to run the program. 
+    &quot;&quot;&quot;</span>
+    <span class="s2">while True</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Select an operation to perform:&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;1. Addition (+)&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;2. Subtraction (-)&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;3. Multiplication (*)&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;4. Division (/)&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;5. Calculate Average (avg)&quot;</span><span class="s3">)</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;6. Exit (exit)&quot;</span><span class="s3">)</span>
+
+        <span class="s1">choice </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;Enter your sign choice: &quot;</span><span class="s3">).</span><span class="s1">strip</span><span class="s3">().</span><span class="s1">lower</span><span class="s3">()</span>
+
+        <span class="s2">if </span><span class="s1">choice </span><span class="s2">in </span><span class="s3">[</span><span class="s4">'+'</span><span class="s3">, </span><span class="s4">'-'</span><span class="s3">, </span><span class="s4">'*'</span><span class="s3">, </span><span class="s4">'/'</span><span class="s3">]:</span>
+            <span class="s1">perform_calculation</span><span class="s3">(</span><span class="s1">choice</span><span class="s3">)</span>
+        <span class="s2">elif </span><span class="s1">choice </span><span class="s3">== </span><span class="s4">'avg'</span><span class="s3">:</span>
+            <span class="s1">calculate_average</span><span class="s3">()</span>
+        <span class="s2">elif </span><span class="s1">choice </span><span class="s3">== </span><span class="s4">'exit'</span><span class="s3">:</span>
+            <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Exiting the program. Thank You!&quot;</span><span class="s3">)</span>
+            <span class="s2">break</span>
+        <span class="s2">else</span><span class="s3">:</span>
+            <span class="s1">logger</span><span class="s3">.</span><span class="s1">error</span><span class="s3">(</span><span class="s4">&quot;Invalid choice. Please select a valid operation.&quot;</span><span class="s3">)</span>
+
+<span class="s2">if </span><span class="s1">__name__ </span><span class="s3">== </span><span class="s4">&quot;__main__&quot;</span><span class="s3">:</span>
+    <span class="s1">main</span><span class="s3">()</span>
+
+<span class="s0">##DSC 510</span>
+<span class="s0">#Author Darious Brown</span>
+<span class="s0">#Programming Assignment Week 6</span>
+<span class="s0">#Week 6</span>
+<span class="s0">#7/14/2024</span>
+<span class="s4">&quot;&quot;&quot; 
+By using user input, this application gathers a list of temperatures,  
+and calculates the total number of temperatures,  
+as well as the highest and lowest values in the list. 
+&quot;&quot;&quot;</span>
+
+<span class="s2">def </span><span class="s1">main</span><span class="s3">():</span>
+    <span class="s0">#Create an empty list named temperatures</span>
+    <span class="s1">temperatures </span><span class="s3">= []</span>
+
+    <span class="s0">#Allow the user to input a series of temperatures</span>
+    <span class="s2">while True</span><span class="s3">:</span>
+        <span class="s1">user_input </span><span class="s3">= </span><span class="s1">input</span><span class="s3">(</span><span class="s4">&quot;Enter a temperature (or 'done' to finish): &quot;</span><span class="s3">)</span>
+        <span class="s2">if </span><span class="s1">user_input</span><span class="s3">.</span><span class="s1">lower</span><span class="s3">() == </span><span class="s4">'done'</span><span class="s3">:</span>
+            <span class="s2">break</span>
+        <span class="s2">try</span><span class="s3">:</span>
+            <span class="s1">temp </span><span class="s3">= </span><span class="s1">float</span><span class="s3">(</span><span class="s1">user_input</span><span class="s3">)</span>
+            <span class="s1">temperatures</span><span class="s3">.</span><span class="s1">append</span><span class="s3">(</span><span class="s1">temp</span><span class="s3">)</span>
+        <span class="s2">except </span><span class="s1">ValueError</span><span class="s3">:</span>
+            <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;Please enter a valid number.&quot;</span><span class="s3">)</span>
+
+    <span class="s0">#Find the highest and lowest temperatures by analyzing the temperature list.</span>
+    <span class="s2">if </span><span class="s1">temperatures</span><span class="s3">:</span>
+        <span class="s1">largest_temperature </span><span class="s3">= </span><span class="s1">max</span><span class="s3">(</span><span class="s1">temperatures</span><span class="s3">)</span>
+        <span class="s1">smallest_temperatures </span><span class="s3">= </span><span class="s1">min</span><span class="s3">(</span><span class="s1">temperatures</span><span class="s3">)</span>
+        <span class="s1">num_temperatures </span><span class="s3">= </span><span class="s1">len</span><span class="s3">(</span><span class="s1">temperatures</span><span class="s3">)</span>
+
+        <span class="s0">#Print the highest temperature possible</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;The largest temperature is:&quot;</span><span class="s3">, </span><span class="s1">largest_temp</span><span class="s3">)</span>
+
+        <span class="s0">#Print the lowest temperature possible</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;The smallest temperature is:&quot;</span><span class="s3">, </span><span class="s1">smallest_temp</span><span class="s3">)</span>
+
+        <span class="s0">#Print a message informing the user of the number of temperatures in the list.</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;The number of temperatures entered is:&quot;</span><span class="s3">, </span><span class="s1">num_temperatures</span><span class="s3">)</span>
+    <span class="s2">else</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;No temperatures were entered.&quot;</span><span class="s3">)</span>
+
+<span class="s0">#Call to the main function</span>
+<span class="s2">if </span><span class="s1">__name__ </span><span class="s3">== </span><span class="s4">&quot;__main__&quot;</span><span class="s3">:</span>
+    <span class="s1">main</span><span class="s3">()</span>
+
+<span class="s0">##DSC 510</span>
+<span class="s0">#Author Darious Brown</span>
+<span class="s0">#Programming Assignment Week 7</span>
+<span class="s0">#Week 7</span>
+<span class="s0">#7/20/2024</span>
+
+<span class="s0">#This fucntion will calculate the total words, and output the number of occurrences of each word in the file.</span>
+
+<span class="s2">import </span><span class="s1">string</span>
+
+<span class="s2">def </span><span class="s1">add_word</span><span class="s3">(</span><span class="s1">word</span><span class="s3">, </span><span class="s1">word_dict</span><span class="s3">):</span>
+    <span class="s6">&quot;&quot;&quot;Add or update the word count in the dictionary.&quot;&quot;&quot;</span>
+    <span class="s1">word </span><span class="s3">= </span><span class="s1">word</span><span class="s3">.</span><span class="s1">lower</span><span class="s3">()</span>
+    <span class="s2">if </span><span class="s1">word </span><span class="s2">in </span><span class="s1">word_dict</span><span class="s3">:</span>
+        <span class="s1">word_dict</span><span class="s3">[</span><span class="s1">word</span><span class="s3">] += </span><span class="s5">1</span>
+    <span class="s2">else</span><span class="s3">:</span>
+        <span class="s1">word_dict</span><span class="s3">[</span><span class="s1">word</span><span class="s3">] = </span><span class="s5">1</span>
+
+<span class="s2">def </span><span class="s1">process_line</span><span class="s3">(</span><span class="s1">line</span><span class="s3">, </span><span class="s1">word_dict</span><span class="s3">):</span>
+    <span class="s6">&quot;&quot;&quot;Process the line to extract words and update their counts.&quot;&quot;&quot;</span>
+    <span class="s1">line </span><span class="s3">= </span><span class="s1">line</span><span class="s3">.</span><span class="s1">strip</span><span class="s3">().</span><span class="s1">translate</span><span class="s3">(</span><span class="s1">str</span><span class="s3">.</span><span class="s1">maketrans</span><span class="s3">(</span><span class="s4">''</span><span class="s3">, </span><span class="s4">''</span><span class="s3">, </span><span class="s1">string</span><span class="s3">.</span><span class="s1">punctuation</span><span class="s3">))</span>
+    <span class="s1">words </span><span class="s3">= </span><span class="s1">line</span><span class="s3">.</span><span class="s1">split</span><span class="s3">()</span>
+    <span class="s2">for </span><span class="s1">word </span><span class="s2">in </span><span class="s1">words</span><span class="s3">:</span>
+        <span class="s1">add_word</span><span class="s3">(</span><span class="s1">word</span><span class="s3">, </span><span class="s1">word_dict</span><span class="s3">)</span>
+
+<span class="s2">def </span><span class="s1">pretty_print</span><span class="s3">(</span><span class="s1">word_dict</span><span class="s3">):</span>
+    <span class="s6">&quot;&quot;&quot;Print the word counts in a nicely formatted manner.&quot;&quot;&quot;</span>
+    <span class="s1">sorted_words </span><span class="s3">= </span><span class="s1">sorted</span><span class="s3">(</span><span class="s1">word_dict</span><span class="s3">.</span><span class="s1">items</span><span class="s3">(), </span><span class="s1">key</span><span class="s3">=</span><span class="s2">lambda </span><span class="s1">x</span><span class="s3">: </span><span class="s1">x</span><span class="s3">[</span><span class="s5">1</span><span class="s3">], </span><span class="s1">reverse</span><span class="s3">=</span><span class="s2">True</span><span class="s3">)</span>
+    <span class="s2">for </span><span class="s1">word</span><span class="s3">, </span><span class="s1">count </span><span class="s2">in </span><span class="s1">sorted_words</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">f&quot;</span><span class="s2">{</span><span class="s1">word</span><span class="s2">}</span><span class="s4">: </span><span class="s2">{</span><span class="s1">count</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s3">)</span>
+
+<span class="s2">def </span><span class="s1">main</span><span class="s3">():</span>
+    <span class="s6">&quot;&quot;&quot;Main function to open the file and process each line.&quot;&quot;&quot;</span>
+    <span class="s1">word_dict </span><span class="s3">= {}</span>
+    <span class="s2">try</span><span class="s3">:</span>
+        <span class="s2">with </span><span class="s1">open</span><span class="s3">(</span><span class="s4">'Gettysburg.txt'</span><span class="s3">, </span><span class="s4">'r'</span><span class="s3">) </span><span class="s2">as </span><span class="s1">file</span><span class="s3">:</span>
+            <span class="s2">for </span><span class="s1">line </span><span class="s2">in </span><span class="s1">file</span><span class="s3">:</span>
+                <span class="s1">process_line</span><span class="s3">(</span><span class="s1">line</span><span class="s3">, </span><span class="s1">word_dict</span><span class="s3">)</span>
+    <span class="s2">except </span><span class="s1">FileNotFoundError</span><span class="s3">:</span>
+        <span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;The file 'Gettysburg.txt' was not found.&quot;</span><span class="s3">)</span>
+        <span class="s2">return</span>
+
+    <span class="s1">pretty_print</span><span class="s3">(</span><span class="s1">word_dict</span><span class="s3">)</span>
+
+<span class="s2">if </span><span class="s1">__name__ </span><span class="s3">== </span><span class="s4">&quot;__main__&quot;</span><span class="s3">:</span>
+    <span class="s1">main</span><span class="s3">()</span>
+</pre>
+</body>
+</html>
